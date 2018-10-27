@@ -39,8 +39,8 @@ class EPIC_Player:
                 (t, l, h, w) = rect
                 t = int(t * self.img_scale[1])
                 l = int(l * self.img_scale[0])
-                w = int(w * self.img_scale[1])
-                h = int(h * self.img_scale[0])
+                h = int(h * self.img_scale[1])
+                w = int(w * self.img_scale[0])
                 cv2.rectangle(self.frame, (l, t), (l+w,t+h), (0, 0, 255), 1)
                 self.add_txt_frame(noun, txt_pos=(l, t), txt_scale=0.3, txt_color=(0, 255, 0))
 
@@ -109,7 +109,7 @@ class EPIC_Player:
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_db_dir', dest='root_db_dir', type=str,
-                        default='./', help='root of epic dataset')
+                        default='/media/nachwa/48d9ff99-04f7-4a80-ae30-8bd5a89069f8/Datasets/epic_kitchen/frames_rgb_flow/', help='root of epic dataset')
     parser.add_argument('-vid', '--video_id', dest='video_id', type=str, 
                         help='video id example without extension ex (P01_01)')
     parser.add_argument('--mode', dest='mode', type=str, 
