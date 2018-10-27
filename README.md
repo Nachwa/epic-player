@@ -51,19 +51,19 @@ python epic_player.py --mode save --video_id P12_01 --root_db_dir /path/to/frame
 
 ### Additional options
 
-Frame size:
+Frame size
 
 ```
 --size 700 500
 ```
-Speed (number of frames to skip between 2 frame readings) :
+Speed (number of frames to skip between 2 frame readings)
 ```
 --vspeed 2
 ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Reference
 
