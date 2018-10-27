@@ -10,7 +10,7 @@ class EPIC_Player:
         #load annotation files 
         self.video_id = video_id   
         self.frames_dir = db_root_dir + 'frames_rgb_flow/rgb/train/' + self.video_id.split('_')[0]+ '/'
-        self.annotation_dir = db_root_dir + 'annotations/'
+        self.annotation_dir = './annotations/'
         self.videos_info = pd.read_csv(self.annotation_dir + 'EPIC_video_info.csv')
         self.video_table = pd.read_pickle(self.annotation_dir + 'per_video/'+self.video_id+'.pkl')
         self.object_table = pd.read_pickle(self.annotation_dir + 'per_video/'+self.video_id+'_objects.pkl')
@@ -28,7 +28,7 @@ class EPIC_Player:
         print('number of found frames: ', len(self.frames_list))
 
     #------------------------------------------------------------------------------------
-    def add_txt_frame(self, txt, txt_pos, pre_txt='', txt_scale=0.5, txt_color=(0, 255, 0 )): 
+    def add_txt_frame(self, txt, txt_pos, pre_txt='', txt_scale=0.5, txt_color=(255, 255, 255)): 
         """adds txt to frame at specific position"""
         cv2.putText(self.frame, pre_txt + str(txt), txt_pos, cv2.FONT_HERSHEY_SIMPLEX, txt_scale, txt_color)
 
@@ -43,7 +43,7 @@ class EPIC_Player:
                 l = int(l * self.img_scale[0])
                 w = int(w * self.img_scale[1])
                 h = int(h * self.img_scale[0])
-                cv2.rectangle(self.frame, (l, t), (l+h,t+w), (0, 0, 255), 1)
+                cv2.rectangle(self.frame, (l, t), (l+w,t+h), (0, 0, 255), 1)
                 self.add_txt_frame(noun, txt_pos=(l, t), txt_scale=0.3, txt_color=(0, 255, 0))
 
     #------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ class EPIC_Player:
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_db_dir', dest='root_db_dir', type=str,
-                        default='/media/nachwa/48d9ff99-04f7-4a80-ae30-8bd5a89069f8/Datasets/epic_kitchen/', help='root of epic dataset')
+                        default='./', help='root of epic dataset')
     parser.add_argument('-vid', '--video_id', dest='video_id', type=str, 
                         help='video id example without extension ex (P01_01)')
     parser.add_argument('--mode', dest='mode', type=str, 
