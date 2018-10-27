@@ -109,7 +109,7 @@ class EPIC_Player:
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_db_dir', dest='root_db_dir', type=str,
-                        default='/media/nachwa/48d9ff99-04f7-4a80-ae30-8bd5a89069f8/Datasets/epic_kitchen/frames_rgb_flow/', help='root of epic dataset')
+                        default='./', help='root of epic dataset')
     parser.add_argument('-vid', '--video_id', dest='video_id', type=str, 
                         help='video id example without extension ex (P01_01)')
     parser.add_argument('--mode', dest='mode', type=str, 
