@@ -6,6 +6,10 @@ Epic-kitchen dataset [1] video player with all annotation.
 ## Getting Started
 
 This video player plays a video directly from the frames of EPIC kitchen dataset enriched with objects and actions annotations on each annotated frame. 
+<p align="center">
+<img width="700" height="550" src="screen_shot.jpg">
+</p>
+
 
 ### Prerequisites
 
