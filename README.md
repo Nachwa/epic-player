@@ -1,15 +1,15 @@
 # EPIC-Player
 
-Epic-kitchen dataset [1] video player from images folder directly with all annotation.
+Epic-kitchen dataset [1] video player with all annotation.
 
 
 ## Getting Started
 
-This video player plays a video from the frames of EPIC kitchen dataset enriched with objects and actions annotations on each annotated frame. 
+This video player plays a video directly from the frames of EPIC kitchen dataset enriched with objects and actions annotations on each annotated frame. 
 
 ### Prerequisites
 
-* CV2
+* cv2
 * pandas
 * glob
 * tqdm
